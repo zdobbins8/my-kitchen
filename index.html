@@ -51,49 +51,40 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
 .pill-fridge{background:rgba(71,255,224,0.15);color:var(--fridge);border:1px solid rgba(71,255,224,0.3);}
 .pill-cabinet{background:rgba(232,255,71,0.15);color:var(--cabinet);border:1px solid rgba(232,255,71,0.3);}
 .empty{text-align:center;padding:24px 0;color:var(--muted);font-size:14px;}
-.serve-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+
+/* RECIPES */
+.serve-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
 .serve-row label{font-size:13px;color:var(--muted);white-space:nowrap;}
 .serve-row input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:var(--surface2);border-radius:4px;outline:none;}
 .serve-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);cursor:pointer;}
 .serve-num{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--accent);min-width:26px;text-align:center;}
-.find-btn{width:100%;padding:13px;background:var(--accent);color:#0e0e0f;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:14px;font-weight:800;cursor:pointer;}
-.find-btn:active{opacity:0.8;}
-.recipe-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
-.recipe-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px;}
-.recipe-meta{display:flex;align-items:center;gap:7px;margin-bottom:10px;flex-wrap:wrap;}
-.rbadge{font-size:11px;font-family:'Syne',sans-serif;font-weight:700;padding:3px 10px;border-radius:20px;}
-.badge-full{background:rgba(71,255,224,0.15);color:var(--fridge);border:1px solid rgba(71,255,224,0.3);}
-.badge-miss{background:rgba(255,107,107,0.15);color:var(--danger);border:1px solid rgba(255,107,107,0.3);}
-.badge-cal{background:rgba(232,255,71,0.12);color:var(--accent);border:1px solid rgba(232,255,71,0.3);}
-.cal-strip{display:flex;align-items:center;gap:10px;background:var(--surface2);border-radius:10px;padding:10px 12px;margin:10px 0;}
-.cal-num{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--accent);}
-.cal-label{font-size:11px;color:var(--muted);}
-.ing-row{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);}
-.ing-row:last-child{border-bottom:none;}
-.ing-dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}
-.dot-have{background:var(--fridge);}.dot-miss{background:var(--danger);}
-.ing-info{flex:1;}.ing-name{font-size:14px;}.ing-name.missing{color:var(--danger);}
-.ing-buy{font-size:11px;color:var(--muted);margin-top:2px;}
-.ing-amount{font-size:12px;color:var(--muted);white-space:nowrap;}
-.recipe-divider{height:1px;background:var(--border);margin:12px 0;}
-.recipe-steps{font-size:13px;color:var(--muted);line-height:1.7;}
-.ing-preview{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+
+.recipe-how{background:var(--surface2);border-radius:12px;padding:14px;margin-bottom:14px;}
+.recipe-how-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;}
+.recipe-step{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start;}
+.recipe-step:last-child{margin-bottom:0;}
+.step-num{font-family:'Syne',sans-serif;font-size:12px;font-weight:800;color:var(--accent);background:rgba(232,255,71,0.12);border:1px solid rgba(232,255,71,0.25);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-text{font-size:13px;color:var(--muted);line-height:1.55;}
+
+.copy-btn{width:100%;padding:14px;background:var(--accent);color:#0e0e0f;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:14px;font-weight:800;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.copy-btn:active{opacity:0.8;}
+.open-claude-btn{width:100%;padding:13px;background:transparent;border:1px solid rgba(232,255,71,0.4);border-radius:12px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--accent);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;}
+.open-claude-btn:active{opacity:0.8;}
+
+.copied-toast{position:fixed;bottom:calc(80px + var(--safe-bot));left:50%;transform:translateX(-50%);background:var(--accent);color:#0e0e0f;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;padding:10px 20px;border-radius:30px;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:999;white-space:nowrap;}
+.copied-toast.show{opacity:1;}
+
+.ing-preview{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
 .ing-chip{font-size:12px;padding:4px 10px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;gap:5px;}
 .chip-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
-.loading-wrap{text-align:center;padding:32px 0;}
-.spinner{width:32px;height:32px;border:3px solid var(--surface2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 12px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.loading-wrap p{font-size:13px;color:var(--muted);}
 
-/* SCAN TAB */
-.scan-hero{display:flex;flex-direction:column;align-items:center;gap:16px;}
+/* SCANNER */
 .scan-btn-big{width:100%;padding:28px 20px;background:var(--surface);border:2px dashed rgba(232,255,71,0.35);border-radius:20px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;transition:all 0.2s;}
 .scan-btn-big:active{background:var(--surface2);}
 .scan-icon-big{font-size:56px;}
 .scan-lbl{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--accent);}
 .scan-desc{font-size:13px;color:var(--muted);text-align:center;line-height:1.6;max-width:260px;}
 
-/* Scanner fullscreen overlay */
 .scan-overlay{position:fixed;inset:0;background:#000;z-index:100;display:flex;flex-direction:column;padding-top:var(--safe-top);padding-bottom:var(--safe-bot);}
 .scan-overlay.hidden{display:none;}
 .scan-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#000;}
@@ -116,7 +107,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
 .manual-row input::placeholder{color:rgba(255,255,255,0.3);}
 .manual-row button{background:var(--accent);color:#0e0e0f;border:none;border-radius:10px;padding:10px 16px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
 
-/* Result sheet */
 .result-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;display:flex;align-items:flex-end;}
 .result-overlay.hidden{display:none;}
 .result-sheet{background:var(--surface);border-radius:24px 24px 0 0;padding:20px;width:100%;max-height:88vh;overflow-y:auto;padding-bottom:calc(20px + var(--safe-bot));}
@@ -129,7 +119,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
 .loc-icon{font-size:38px;flex-shrink:0;}
 .loc-text h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:4px;}
 .loc-text p{font-size:13px;color:var(--muted);line-height:1.55;}
-.loc-text .tip{margin-top:6px;font-size:12px;color:var(--muted);font-style:italic;}
+.loc-text .tip{margin-top:6px;font-size:12px;font-style:italic;}
 .nutr-box{background:var(--surface2);border-radius:14px;padding:14px;margin-bottom:14px;}
 .nutr-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;}
 .nutr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
@@ -148,7 +138,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
 .cancel-btn{width:100%;padding:12px;background:transparent;border:1px solid var(--border);border-radius:12px;color:var(--muted);font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
 .scan-loading{text-align:center;padding:40px 0;}
 .scan-spinner{width:28px;height:28px;border:3px solid var(--surface2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 12px;}
-.scan-spinner p{font-size:13px;color:var(--muted);}
+@keyframes spin{to{transform:rotate(360deg);}}
 .recent-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
 .recent-item:last-child{border-bottom:none;}
 .recent-name{flex:1;font-size:14px;}
@@ -199,16 +189,41 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
     <!-- RECIPES -->
     <div id="sec-recipes" class="section">
       <div class="card">
-        <div class="card-title">Settings</div>
+        <div class="card-title">How many servings?</div>
         <div class="serve-row">
           <label>Servings</label>
           <input type="range" min="1" max="12" value="2" id="serve-slider" oninput="document.getElementById('serve-num').textContent=this.value" />
           <span class="serve-num" id="serve-num">2</span>
         </div>
+
+        <div class="card-title" style="margin-top:4px;">Your ingredients</div>
         <div id="ing-preview" class="ing-preview"></div>
-        <button class="find-btn" onclick="findRecipes()">Find Recipes</button>
+
+        <div class="recipe-how">
+          <div class="recipe-how-title">How to get recipes</div>
+          <div class="recipe-step">
+            <div class="step-num">1</div>
+            <div class="step-text">Tap <strong style="color:var(--text)">Copy Ingredients</strong> below to copy your full ingredient list.</div>
+          </div>
+          <div class="recipe-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Tap <strong style="color:var(--text)">Open Claude</strong> to go to Claude.ai.</div>
+          </div>
+          <div class="recipe-step">
+            <div class="step-num">3</div>
+            <div class="step-text">Paste it into the chat and Claude will generate recipes with calories, locations, and scaled quantities.</div>
+          </div>
+        </div>
+
+        <button class="copy-btn" onclick="copyIngredients()">
+          <span style="font-size:18px;">📋</span> Copy Ingredients
+        </button>
+        <a href="https://claude.ai" target="_blank" style="text-decoration:none;">
+          <div class="open-claude-btn">
+            <span style="font-size:16px;">✦</span> Open Claude.ai
+          </div>
+        </a>
       </div>
-      <div id="recipes-out"></div>
     </div>
 
     <!-- SCAN -->
@@ -218,7 +233,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
         <div class="scan-btn-big" onclick="openScanner()">
           <div class="scan-icon-big">📷</div>
           <div class="scan-lbl">Scan a Barcode</div>
-          <div class="scan-desc">At the store? Scan any product — we'll tell you exactly where it goes at home (Fridge or Cabinet) and let you set the quantity.</div>
+          <div class="scan-desc">At the store? Scan any product — we'll tell you exactly where it goes at home and let you set the quantity before adding it.</div>
         </div>
       </div>
       <div class="card" id="recent-card" style="display:none;">
@@ -246,7 +261,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
       </div>
     </div>
   </div>
-  <div class="scan-hint-bar">Hold steady — point at barcode</div>
+  <div class="scan-hint-bar" id="scan-hint">Hold steady — point at barcode</div>
   <div class="manual-row">
     <input type="text" id="manual-barcode" placeholder="Or type barcode number..." inputmode="numeric" />
     <button onclick="lookupManual()">Look up</button>
@@ -260,6 +275,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
     <div id="result-content"></div>
   </div>
 </div>
+
+<div class="copied-toast" id="copied-toast">Copied to clipboard!</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@zxing/browser@0.1.1/umd/index.min.js"></script>
 <script>
@@ -289,9 +306,9 @@ let currentProduct=null;
 let codeReader=null;
 let scanActive=false;
 
-function save(){try{localStorage.setItem('myKitchen_v4',JSON.stringify({inv,recentScans}));}catch(e){}}
+function save(){try{localStorage.setItem('myKitchen_v5',JSON.stringify({inv,recentScans}));}catch(e){}}
 function load(){
-  try{const d=localStorage.getItem('myKitchen_v4');if(d){const p=JSON.parse(d);inv=p.inv||JSON.parse(JSON.stringify(DEFAULTS));recentScans=p.recentScans||[];return true;}}catch(e){}
+  try{const d=localStorage.getItem('myKitchen_v5');if(d){const p=JSON.parse(d);inv=p.inv||JSON.parse(JSON.stringify(DEFAULTS));recentScans=p.recentScans||[];return true;}}catch(e){}
   return false;
 }
 
@@ -334,70 +351,49 @@ function render(loc){
 function updateHeaderSub(){
   document.getElementById('header-sub').textContent=`${inv.fridge.length} fridge · ${inv.cabinet.length} cabinet`;
 }
+
 function updatePreview(){
   const el=document.getElementById('ing-preview');
   const all=[...inv.fridge.map(i=>({...i,loc:'fridge'})),...inv.cabinet.map(i=>({...i,loc:'cabinet'}))];
-  if(!all.length){el.innerHTML='<span style="font-size:13px;color:var(--muted)">Add ingredients first</span>';return;}
+  if(!all.length){el.innerHTML='<span style="font-size:13px;color:var(--muted)">Add ingredients to Fridge or Cabinet first</span>';return;}
   el.innerHTML=all.map(i=>`<div class="ing-chip"><span class="chip-dot" style="background:${i.loc==='fridge'?'var(--fridge)':'var(--cabinet)'}"></span>${i.name}</div>`).join('');
 }
 
-/* RECIPES */
-async function findRecipes(){
-  const servings=parseInt(document.getElementById('serve-num').textContent);
-  const all=[...inv.fridge.map(i=>`${i.qty} ${i.unit} ${i.name} (Fridge)`),...inv.cabinet.map(i=>`${i.qty} ${i.unit} ${i.name} (Cabinet)`)];
+function copyIngredients(){
+  const servings=document.getElementById('serve-num').textContent;
+  const fridge=inv.fridge.map(i=>`${i.qty} ${i.unit} ${i.name} (Fridge)`);
+  const cabinet=inv.cabinet.map(i=>`${i.qty} ${i.unit} ${i.name} (Cabinet)`);
+  const all=[...fridge,...cabinet];
   if(!all.length){alert('Add some ingredients first!');return;}
-  const out=document.getElementById('recipes-out');
-  out.innerHTML='<div class="loading-wrap"><div class="spinner"></div><p>Finding recipes...</p></div>';
-  const prompt=`You are a cooking assistant. The user has: ${all.join(', ')}.
-Generate exactly 3 recipes for ${servings} serving(s). Reply ONLY with valid JSON, no markdown, no extra text:
-{"recipes":[{"title":"string","steps":"2-3 sentence instructions","calories_per_serving":number,"ingredients":[{"name":"string","amount":"scaled for ${servings} servings","have":true,"location":"Fridge or Cabinet or null","buyAt":"store section if missing, else null"}]}]}
-calories_per_serving must be a realistic integer. Only mark have:true if ingredient closely matches the user list. Scale amounts to ${servings} servings.`;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1400,messages:[{role:'user',content:prompt}]})});
-    const data=await res.json();
-    const text=data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
-    renderRecipes(JSON.parse(text).recipes,servings);
-  }catch(e){out.innerHTML='<div class="card"><div class="empty">Couldn\'t load — try again</div></div>';}
+  const text=`RECIPE_REQUEST|servings:${servings}|ingredients:${all.join(', ')}`;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>showToast()).catch(()=>fallbackCopy(text));
+  } else { fallbackCopy(text); }
 }
 
-function renderRecipes(recipes,servings){
-  document.getElementById('recipes-out').innerHTML=recipes.map(r=>{
-    const have=r.ingredients.filter(i=>i.have).length,total=r.ingredients.length;
-    const ingHtml=r.ingredients.map(ing=>`
-      <div class="ing-row">
-        <span class="ing-dot ${ing.have?'dot-have':'dot-miss'}"></span>
-        <div class="ing-info">
-          <span class="ing-name ${ing.have?'':'missing'}">${ing.name}${ing.have&&ing.location?` <span class="pill pill-${ing.location.toLowerCase()}">${ing.location}</span>`:''}</span>
-          ${!ing.have&&ing.buyAt?`<div class="ing-buy">Find: ${ing.buyAt}</div>`:''}
-        </div>
-        <span class="ing-amount">${ing.amount}</span>
-      </div>`).join('');
-    return `<div class="recipe-card">
-      <div class="recipe-name">${r.title}</div>
-      <div class="recipe-meta">
-        <span class="rbadge ${have===total?'badge-full':'badge-miss'}">${have}/${total} on hand</span>
-        <span class="rbadge badge-cal">🔥 ${r.calories_per_serving} cal/serving</span>
-      </div>
-      <div class="cal-strip">
-        <div><div class="cal-num">${r.calories_per_serving}</div><div class="cal-label">cal / serving</div></div>
-        <div style="width:1px;background:var(--border);height:32px;margin:0 4px;"></div>
-        <div><div class="cal-num" style="font-size:15px">${Math.round(r.calories_per_serving*servings)}</div><div class="cal-label">total · ${servings} serving${servings!==1?'s':''}</div></div>
-      </div>
-      ${ingHtml}
-      <div class="recipe-divider"></div>
-      <div class="recipe-steps">${r.steps}</div>
-    </div>`;
-  }).join('');
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast();}catch(e){alert('Copy failed — please copy manually:\n\n'+text);}
+  document.body.removeChild(ta);
+}
+
+function showToast(){
+  const t=document.getElementById('copied-toast');
+  t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);
 }
 
 /* SCANNER */
 async function openScanner(){
   document.getElementById('scan-overlay').classList.remove('hidden');
   scanActive=true;
+  const hint=document.getElementById('scan-hint');
   try{
     const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment',width:{ideal:1280},height:{ideal:720}}});
     const video=document.getElementById('scanner-video');
     video.srcObject=stream;await video.play();
+    hint.textContent='Hold steady — point at barcode';
     if(typeof ZXingBrowser!=='undefined'){
       try{
         codeReader=new ZXingBrowser.BrowserMultiFormatReader();
@@ -407,7 +403,7 @@ async function openScanner(){
       }catch(e){}
     }
   }catch(e){
-    document.querySelector('.scan-hint-bar').textContent='Camera unavailable — use the text box below';
+    hint.textContent='Camera unavailable — type the barcode number below';
   }
 }
 
@@ -415,13 +411,10 @@ function closeCamera(){
   try{const v=document.getElementById('scanner-video');if(v.srcObject)v.srcObject.getTracks().forEach(t=>t.stop());v.srcObject=null;}catch(e){}
   if(codeReader){try{codeReader.reset();}catch(e){}codeReader=null;}
 }
-
 function closeScanner(){scanActive=false;closeCamera();document.getElementById('scan-overlay').classList.add('hidden');}
-
 function lookupManual(){
   const val=document.getElementById('manual-barcode').value.trim();
-  if(!val)return;
-  closeScanner();lookupBarcode(val);
+  if(!val)return;closeScanner();lookupBarcode(val);
 }
 
 async function lookupBarcode(barcode){
@@ -444,22 +437,26 @@ async function lookupBarcode(barcode){
     }
   }catch(e){}
 
-  const prompt=`Product name: "${productName}", barcode: ${barcode}.
-Reply ONLY with valid JSON, no markdown:
-{"name":"full product name","brand":"brand name","location":"Fridge or Cabinet","reason":"one sentence why it goes there","suggestedUnit":"pcs","tip":"one short useful shopping or storage tip"}
-Fridge = needs refrigeration (dairy, meat, fresh produce, drinks, eggs, opened condiments).
-Cabinet = shelf-stable (canned goods, dry pasta, spices, oils, cereal, snacks, baking supplies).`;
+  // Determine storage location based on product name heuristics (no API call needed)
+  const name=productName.toLowerCase();
+  const fridgeKeywords=['milk','cheese','egg','meat','beef','chicken','pork','fish','seafood','yogurt','butter','cream','juice','soda','beer','wine','lettuce','salad','spinach','kale','berry','berries','mushroom','tofu','hummus','dip','guacamole','tortilla','dough','batter','mayo','mayonnaise','ketchup','mustard','hot sauce','salsa','leftovers','deli','bacon','sausage','pepperoni','ham','turkey','produce','fruit','vegetable','carrot','broccoli','cucumber','tomato','pepper','sprout'];
+  const cabinetKeywords=['pasta','rice','flour','sugar','salt','pepper','oil','vinegar','sauce','can','canned','dried','spice','seasoning','herb','basil','oregano','garlic powder','onion powder','cereal','oat','bread','cracker','chip','snack','coffee','tea','cocoa','chocolate','honey','jam','jelly','peanut butter','almond','nut','seed','lentil','bean','soup','broth','stock','baking','powder','soda','vanilla','syrup'];
+  let location='Cabinet';
+  for(const k of fridgeKeywords){if(name.includes(k)){location='Fridge';break;}}
+  if(location==='Cabinet'){for(const k of cabinetKeywords){if(name.includes(k)){location='Cabinet';break;}}}
 
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,messages:[{role:'user',content:prompt}]})});
-    const data=await res.json();
-    const text=data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
-    const ai=JSON.parse(text);
-    currentProduct={name:ai.name||productName,brand:ai.brand||brand,barcode,location:ai.location,reason:ai.reason,tip:ai.tip,suggestedUnit:ai.suggestedUnit||'pcs',nutrition};
-  }catch(e){
-    currentProduct={name:productName,brand,barcode,location:'Cabinet',reason:'Could not determine automatically.',tip:'',suggestedUnit:'pcs',nutrition};
-  }
-  scanQty=1;showResultSheet(currentProduct);
+  const reasons={
+    'Fridge':'Needs refrigeration to stay fresh and safe.',
+    'Cabinet':'Shelf-stable — store in a cool, dry cabinet.'
+  };
+  const tips={
+    'Fridge':'Check the expiration date and keep sealed after opening.',
+    'Cabinet':'Keep away from heat and moisture for best shelf life.'
+  };
+
+  currentProduct={name:productName,brand,barcode,location,reason:reasons[location],tip:tips[location],suggestedUnit:'pcs',nutrition};
+  scanQty=1;
+  showResultSheet(currentProduct);
 }
 
 function showResultLoading(){
@@ -473,13 +470,13 @@ function showResultSheet(p){
   const unitOpts=units.map(u=>`<option ${u===p.suggestedUnit?'selected':''}>${u}</option>`).join('');
   document.getElementById('result-content').innerHTML=`
     <div class="r-product-name">${p.name}</div>
-    <div class="r-brand">${p.brand||'Brand unknown'} · ${p.barcode}</div>
+    <div class="r-brand">${p.brand||'Brand unknown'} · Barcode: ${p.barcode}</div>
     <div class="loc-card ${isF?'loc-fridge-card':'loc-cabinet-card'}">
       <div class="loc-icon">${isF?'🧊':'🗄'}</div>
       <div class="loc-text">
         <h3 style="color:${isF?'var(--fridge)':'var(--cabinet)'}">${p.location}</h3>
         <p>${p.reason}</p>
-        ${p.tip?`<p class="tip">${p.tip}</p>`:''}
+        <p class="tip">${p.tip}</p>
       </div>
     </div>
     ${p.nutrition.calories>0?`<div class="nutr-box">
